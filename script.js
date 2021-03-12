@@ -9,9 +9,9 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-
+    playerSelection = playerSelection.toLowerCase();
 }
 
-const playerSelection = "rock";
+const playerSelection = "Rock";
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection));
