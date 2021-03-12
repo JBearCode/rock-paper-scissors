@@ -16,10 +16,16 @@ function playRound(playerSelection, computerSelection) {
     const loseRound = "You lost!" + computerSelection + " beats " + playerSelection;
 
     if (playerSelection === computerSelection) {
-        return
-    }
+        return tieRound;
+    } else if ((playerSelection = "rock" && computerSelection = "scissors") OR
+                (playerSelection = "paper" && computerSelection = "rock") OR
+                (playerSelection = "scissors" && computerSelection = "paper")) {
+        return winRound;
+    } else {
+        return loseRound;
+    }  
 }
 
-const playerSelection = "Rock";
+let playerSelection = "Rock";
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection));
