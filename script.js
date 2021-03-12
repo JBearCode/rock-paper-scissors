@@ -17,14 +17,21 @@ function playerPlay() {
 let playerScore = 0;
 let botScore = 0;
 
+// Function to capitalize first letter in a string (used in playRound function)
+function capitalize1stLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // playRound runs computerPlay() and playerPlay(), updates scores based on winner, and returns results
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerPlay();
     computerSelection = computerPlay();
 
-    const winRound = "You won! " + playerSelection + " beats " + computerSelection;
-    const tieRound = "You tied. " + playerSelection + " ties " + computerSelection;
-    const loseRound = "You lost! " + playerSelection + " loses to " + computerSelection;
+    const winRound = "You won! " + capitalize1stLetter(playerSelection) + " beats " + computerSelection + ".";
+    const tieRound = "You tied. " + capitalize1stLetter(playerSelection) + " ties " + computerSelection + ".";
+    const loseRound = "You lost! " + capitalize1stLetter(playerSelection) + " loses to " + computerSelection + ".";
+    const winGame = "\nYou won the game! Reload page to try again."
+    const loseGame = "\nYou lose the game! Reload page to try again."
 
     if (playerSelection === computerSelection) {
         return tieRound;
@@ -32,15 +39,25 @@ function playRound(playerSelection, computerSelection) {
             || (playerSelection === "paper" && computerSelection === "rock")
             || (playerSelection === "scissors" && computerSelection === "paper")) {
         ++playerScore;
-        return winRound;
+        if (playerScore === 5) {
+            return winRound + winGame;
+        }
+        else {
+            return winRound;
+        }
     } else {
         ++botScore;
-        return loseRound;
+        if (botScore === 5) {
+            return loseRound + loseGame;
+        }
+        else {
+            return loseRound;
+        }
     }  
 }
 
 function game() {
     while (playerScore < 5 && botScore < 5) {
-        playRound();
+        console.log(playRound());
     }
 }
