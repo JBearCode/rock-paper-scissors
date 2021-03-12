@@ -13,6 +13,10 @@ function playerPlay() {
     return playerAnswer;
 }
 
+// Keep score
+let playerScore = 0;
+let botScore = 0;
+
 // these constants make playRound run the following two functions on start
 const playerSelection = playerPlay();
 const computerSelection = computerPlay();
@@ -30,17 +34,10 @@ function playRound(playerSelection, computerSelection) {
     } else if ((playerSelection === "rock" && computerSelection === "scissors") 
             || (playerSelection === "paper" && computerSelection === "rock")
             || (playerSelection === "scissors" && computerSelection === "paper")) {
+        ++playerScore;
         return winRound;
     } else {
+        ++botScore;
         return loseRound;
     }  
-}
-
-// game calls playRound five times (not working)
-function game() {
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
 }
