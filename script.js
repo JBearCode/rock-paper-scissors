@@ -10,6 +10,14 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
+
+    const winRound = "You won! " + playerSelection + " beats " + computerSelection;
+    const tieRound = "You tied." + playerSelection + " ties " + computerSelection;
+    const loseRound = "You lost!" + computerSelection + " beats " + playerSelection;
+
+    if (playerSelection === computerSelection) {
+        return
+    }
 }
 
 const playerSelection = "Rock";
