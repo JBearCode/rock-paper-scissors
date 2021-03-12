@@ -18,11 +18,9 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
         return tieRound;
-    } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return winRound;
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return winRound;
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    } else if ((playerSelection === "rock" && computerSelection === "scissors") 
+            || (playerSelection === "paper" && computerSelection === "rock")
+            || (playerSelection === "scissors" && computerSelection === "paper")) {
         return winRound;
     } else {
         return loseRound;
