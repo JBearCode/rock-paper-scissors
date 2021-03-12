@@ -13,6 +13,11 @@ function playerPlay() {
     return playerAnswer;
 }
 
+// these constants make playRound run the following two functions on start
+const playerSelection = playerPlay();
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
+
 // playRound runs computerPlay() and playerPlay() and returns the winner
 function playRound(playerSelection, computerSelection) {
 
@@ -31,11 +36,6 @@ function playRound(playerSelection, computerSelection) {
     }  
 }
 
-// these constants make playRound run the following two functions on start
-const playerSelection = playerPlay();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
-
 // game calls playRound five times (not working)
 function game() {
     playRound(playerSelection, computerSelection);
@@ -44,5 +44,3 @@ function game() {
     playRound(playerSelection, computerSelection);
     playRound(playerSelection, computerSelection);
 }
-
-console.log(game());
