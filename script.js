@@ -8,13 +8,14 @@ function computerPlay() {
     return availableChoices[randomChoice];
 }
 
-
+const playerPlay = window.prompt("Choose rock, paper, or scissors.", "")
 
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
 
     const winRound = "You won! " + playerSelection + " beats " + computerSelection;
     const tieRound = "You tied. " + playerSelection + " ties " + computerSelection;
-    const loseRound = "You lost! " + computerSelection + " beats " + playerSelection;
+    const loseRound = "You lost! " + playerSelection + " loses to " + computerSelection;
 
     if (playerSelection === computerSelection) {
         return tieRound;
@@ -27,6 +28,6 @@ function playRound(playerSelection, computerSelection) {
     }  
 }
 
-const playerSelection = "rock";
+const playerSelection = playerPlay;
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
