@@ -8,10 +8,12 @@ function computerPlay() {
     return availableChoices[randomChoice];
 }
 
-const playerPlay = window.prompt("Choose rock, paper, or scissors.", "")
+function playerPlay() {
+    let playerAnswer = window.prompt("Choose rock, paper, or scissors.", "").toLowerCase();
+    return playerAnswer;
+}
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
 
     const winRound = "You won! " + playerSelection + " beats " + computerSelection;
     const tieRound = "You tied. " + playerSelection + " ties " + computerSelection;
@@ -28,6 +30,10 @@ function playRound(playerSelection, computerSelection) {
     }  
 }
 
-const playerSelection = playerPlay;
+function game() {
+    
+}
+
+const playerSelection = playerPlay();
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
