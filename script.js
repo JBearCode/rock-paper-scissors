@@ -17,13 +17,10 @@ function playerPlay() {
 let playerScore = 0;
 let botScore = 0;
 
-// these constants make playRound run the following two functions on start
-const playerSelection = playerPlay();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
-
-// playRound runs computerPlay() and playerPlay() and returns the winner
+// playRound runs computerPlay() and playerPlay(), updates scores based on winner, and returns results
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerPlay();
+    computerSelection = computerPlay();
 
     const winRound = "You won! " + playerSelection + " beats " + computerSelection;
     const tieRound = "You tied. " + playerSelection + " ties " + computerSelection;
@@ -40,4 +37,10 @@ function playRound(playerSelection, computerSelection) {
         ++botScore;
         return loseRound;
     }  
+}
+
+function game() {
+    while (playerScore < 5 && botScore < 5) {
+        playRound();
+    }
 }
