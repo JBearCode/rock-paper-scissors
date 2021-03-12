@@ -1,13 +1,11 @@
 "use strict";
 
-// 1. Make function choose 1 of 3 strings (or from array?)
-
-const availableChoices = ["rock", "paper", "scissors"];
-const randomChoice = Math.floor(Math.random() * availableChoices.length);
-return randomChoice;
+// computerPlay now outputs "rock", "paper", or "scissors" randomly
 
 function computerPlay() {
-
+    const availableChoices = ["rock", "paper", "scissors"];
+    const randomChoice = Math.floor(Math.random() * availableChoices.length);
+    return availableChoices[randomChoice];
 }
 
 function playRound(playerSelection, computerSelection) {
