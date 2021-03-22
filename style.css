@@ -1,6 +1,51 @@
+/* Resetting browser defaults + full height page */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Basic Style - Font and Size */
+body {
+    font-family: arial, sans-serif;
+    font-size: 13px;
+}
+
+/* Ensure that flex containers don't go over 100% */
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+  }
+
 /* Flexbox wrapper for whole page */
 .wrapper {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+/* Create flexbox for main content */
+.playButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 70px;
+    width: 100%;
+    flex-grow: 1; /* This makes main grow and sticks footer to bottom */
+}
+
+.resultMessages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 70px;
+    width: 100%;
+    flex-grow: 1; /* This makes main grow and sticks footer to bottom */ 
+}
+
+/* Center align header and footer text */
+
+header, footer {
+    text-align: center;
 }
