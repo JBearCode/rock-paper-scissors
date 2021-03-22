@@ -11,6 +11,18 @@ body {
     font-size: 13px;
 }
 
+h1 {
+    color: black;
+    font-size: 40px;
+}
+
+.gameRules {
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0px 15px;
+}
+
 /* Ensure that flex containers don't go over 100% */
 *, *:before, *:after {
     -webkit-box-sizing: border-box; 
@@ -25,14 +37,38 @@ body {
     flex-direction: column;
 }
 
-/* Create flexbox for main content */
+/* Create flexbox for button inputs */
 .playButtons {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 70px;
+    justify-content: center;
+    margin-top: 30px;
     width: 100%;
-    flex-grow: 1; /* This makes main grow and sticks footer to bottom */
+}
+
+/* Stick footer to bottom */
+main {
+    flex-grow: 1;
+}
+
+/* Style and margin for buttons */
+.playButtons button {
+    margin: .5em;
+    color: rgba(0,142,213,254);
+    font-weight: 800;
+    opacity: .75;
+}
+
+.playButtons button:hover {
+    color: rgba(246,125,0,255);
+}
+
+/* Set image size and margin within buttons */
+.playButtons img {
+    width: 12em;
+    height: 12em;
+    margin: .5em;
 }
 
 .resultMessages {
@@ -41,11 +77,18 @@ body {
     align-items: center;
     margin-bottom: 70px;
     width: 100%;
-    flex-grow: 1; /* This makes main grow and sticks footer to bottom */ 
+    flex-grow: 1;
 }
 
 /* Center align header and footer text */
 
 header, footer {
     text-align: center;
+}
+
+footer {
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0px 15px;
 }
