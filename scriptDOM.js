@@ -1,8 +1,17 @@
 "use strict";
 
-// computerPlay outputs "rock", "paper", or "scissors" randomly
+// weighted random outputs
 function computerPlay() {
-    const availableChoices = ["rock", "paper", "scissors"];
+    const availableChoices = ["rock", "paper", "scissors", "fire", "water"];
+    const choiceWeight = [1, 1, 1, 3, 3];
+    const totalWeight = eval.(choiceWeight.join("+"));
+    const currentChoice = 0;
+
+    while (currentChoice < availableChoices.length) {
+        for (i = 0; i < choiceWeight[currentChoice]; i++)
+        
+    }
+
     const randomChoice = Math.floor(Math.random() * availableChoices.length);
     return availableChoices[randomChoice];
 }
