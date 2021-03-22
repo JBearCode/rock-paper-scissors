@@ -1,0 +1,6 @@
+/* Flexbox wrapper for whole page */
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
