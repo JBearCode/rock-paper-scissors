@@ -80,6 +80,11 @@ main {
     flex-grow: 1;
 }
 
+.mainPara {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 /* Center align header and footer text */
 
 header, footer {
@@ -87,6 +92,9 @@ header, footer {
 }
 
 footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     color: black;
     font-size: 30px;
     font-weight: 700;

@@ -1,5 +1,9 @@
 "use strict";
 
+// Keep score
+let playerScore = 0;
+let computerScore = 0;
+
 // play a random (weighted) choice
 function computerPlay() {
     let weightedChoices = [
@@ -30,10 +34,6 @@ function computerPlay() {
     }   
     return weightedChoices[weightedChoices.length -1][0];
 }
-
-// Keep score
-let playerScore = 0;
-let computerScore = 0;
 
 // Function to capitalize first letter in a string (used in playRound function)
 function capitalize1stLetter(string) {
@@ -87,3 +87,4 @@ if (playerSelection === computerSelection) {
         return loseRound + currentScore;
     }
 }  
+
