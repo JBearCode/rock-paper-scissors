@@ -80,7 +80,7 @@ main {
     flex-grow: 1;
 }
 
-.mainPara {
+#mainPara {
     font-size: 30px;
     font-weight: 700;
 }

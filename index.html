@@ -15,14 +15,14 @@
     </header>
     <main>
     <div class="playButtons">
-        <button type="button" class="gameButton" id="rockButton"><img src="images/rock.png" alt="rock icon"><br>Rock</button>
-        <button type="button" class="gameButton" id="paperButton"><img src="images/paper2.png" alt="paper icon"><br>Paper</button>
-        <button type="button" class="gameButton" id="scissorsButton"><img src="images/scissors3.png" alt="scissors icon"><br>Scissors</button>
-        <button type="button" class="gameButton" id="fireButton"><img src="images/fire.png" alt="fire icon"><br>Fire</button>
-        <button type="button" class="gameButton" id="waterButton"><img src="images/water3.png" alt="water icon"><br>Water</button>
+        <button type="button" class="gameButton" id="rock" onClick="playRound(this.id)"><img src="images/rock.png" alt="rock icon"><br>Rock</button>
+        <button type="button" class="gameButton" id="paper" onClick="playRound(this.id)"><img src="images/paper2.png" alt="paper icon"><br>Paper</button>
+        <button type="button" class="gameButton" id="scissors" onClick="playRound(this.id)"><img src="images/scissors3.png" alt="scissors icon"><br>Scissors</button>
+        <button type="button" class="gameButton" id="fire" onClick="playRound(this.id)"><img src="images/fire.png" alt="fire icon"><br>Fire</button>
+        <button type="button" class="gameButton" id="water" onClick="playRound(this.id)"><img src="images/water3.png" alt="water icon"><br>Water</button>
     </div>
     <div class="resultMessages">
-        <p class="mainPara">Let's get this party started!</p>
+        <p id="mainPara">Let's get this party started!</p>
     </div>
     </main>
     <footer>
