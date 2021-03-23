@@ -2,7 +2,10 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let resetButton;
+
 const mainPara = document.getElementById("mainPara");
+const gameButtons = document.querySelectorAll("button");
 
 function playRound(buttonName) {
     const playerSelection = buttonName;
@@ -20,16 +23,18 @@ function checkGameOver() {
 }
 
 function endGame() {
-    if (playerScore = 5) {
+    if (playerScore <= 5) {
     mainPara.textContent = "Woohoo! You won the game! 🥳"
     } else {
-    mainPara.textContent = "Unfortunately, you've been bested by a mindless hunk of metal. 😬 "
+    mainPara.textContent = "Unfortunately, you've been bested by a mindless hunk of metal. 😬 ";
     }
+
+    gameButtons.disabled = true;
+    resetButton = document.createElement('button');
+    resetButton.textContent = "Battle once more!";
+    mainPara.appendChild(resetButton);
+
 }
-
-
-
-    
 
 function updateScore(winner) {
     const playerScorePara = document.getElementById("playerScorePara");
