@@ -28,51 +28,62 @@ function computerPlay() {
             return weightedChoices[i][0];
         }
     }   
-return weightedChoices[weightedChoices.length -1][0];
+    return weightedChoices[weightedChoices.length -1][0];
+}
+
+// Keep score
+let playerScore = 0;
+let computerScore = 0;
+
+// Function to capitalize first letter in a string (used in playRound function)
+function capitalize1stLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 // Button constants
-const rock = document.getElementById('rockButton');
-const paper = document.getElementById('paperButton');
-const scissors = document.getElementById('scissorsButton');
-const fire = document.getElementById('fireButton');
-const water = document.getElementById('waterButton');
+const rockButton = document.getElementById('rockButton');
+const paperButton = document.getElementById('paperButton');
+const scissorsButton = document.getElementById('scissorsButton');
+const fireButton = document.getElementById('fireButton');
+const waterButton = document.getElementById('waterButton');
 
-rock.addEventListener('click', playRound(rock));
-paper.addEventListener('click', playRound(paper));
-scissors.addEventListener('click', playRound(scissors));
-fire.addEventListener('click', playRound(fire));
-water.addEventListener('click', playRound(water));
+// initiate playRound function on click
+rockButton.addEventListener('click', function() { 
+    playRound("rock", computerPlay()) });
+paperButton.addEventListener('click', function() { 
+    playRound("paper", computerPlay()) });
+scissorsButton.addEventListener('click', function() { 
+    playRound("scissors", computerPlay()) });
+fireButton.addEventListener('click', function() { 
+    playRound("fire", computerPlay()) });
+waterButton.addEventListener('click', function() { 
+    playRound("water", computerPlay()) });
 
+// function to return results of one round
 function playRound (playerSelection, computerSelection) { 
-    computerSelection = computerPlay();
 
-const winRound = "You won! " + capitalize1stLetter(playerSelection) + " beats " + computerSelection + ".";
-const tieRound = "You tied. " + capitalize1stLetter(playerSelection) + " ties " + computerSelection + ".";
-const loseRound = "You lost! " + capitalize1stLetter(playerSelection) + " loses to " + computerSelection + ".";
-const currentScore = "\nYour score is " + playerScore + ". Computer score is " + botScore + ".";
-const winGame = "\nYou won the game! Reload page to try again.";
-const loseGame = "\nYou lose the game! Reload page to try again.";
+    const winRound = "You won! " + capitalize1stLetter(playerSelection) + " beats " + computerSelection + ".";
+    const tieRound = "You tied. " + capitalize1stLetter(playerSelection) + " ties " + computerSelection + ".";
+    const loseRound = "You lost! " + capitalize1stLetter(playerSelection) + " loses to " + computerSelection + ".";
+    const currentScore = "Your score is " + playerScore + ". Computer score is " + computerScore + ".";
+    const winGame = "\nYou won the game! Reload page to try again.";
+    const loseGame = "\nYou lose the game! Reload page to try again.";
 
 if (playerSelection === computerSelection) {
-    return tieRound;
+    return tieRound + currentScore;
 } else if ((playerSelection === "rock" && computerSelection === "scissors") 
         || (playerSelection === "paper" && computerSelection === "rock")
-        || (playerSelection === "scissors" && computerSelection === "paper")) {
+        || (playerSelection === "scissors" && computerSelection === "paper")
+        || (playerSelection === "water" && computerSelection === "fire" )
+        || (playerSelection === "fire" && computerSelection !== "water" )) {
     ++playerScore;
-    if (playerScore === 5) {
-        return winRound + currentScore + winGame;
-    }
-    else {
-        return winRound + currentScore;
-    }
-} else {
-    ++botScore;
-    if (botScore === 5) {
+    playerScore == 5 ? winRound + currentScore + winGame : winRound + currentScore;
+} else
+    ++computerScore;
+    if (computerScore === 5) {
         return loseRound + currentScore + loseGame;
     }
     else {
         return loseRound + currentScore;
     }
 }  
-}
