@@ -5,6 +5,7 @@ let computerScore = 0;
 let resetButton;
 
 const mainPara = document.getElementById("mainPara");
+const resultMessages = document.getElementById("resultMessages");
 const gameButton = document.querySelectorAll(".gameButton");
 
 function playRound(buttonName) {
@@ -34,12 +35,14 @@ function endGame() {
         });
     
     resetButton = document.createElement('button');
+    resetButton.classList.add("resetbutton");
     resetButton.textContent = "Battle once more!";
-    mainPara.appendChild(resetButton);
+    resultMessages.appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
 
 function resetGame() {
+    resultMessages.removeChild(resetButton);
     playerScore = 0;
     computerScore = 0;
     playerScorePara.textContent = `Player: ${playerScore}` ;
@@ -49,8 +52,7 @@ function resetGame() {
         button.disabled = false;
         });
     
-    mainPara.textContent = "The elements will battle once more.";
-
+    mainPara.textContent = "Good luck!";
 }
 
 function updateScore(winner) {

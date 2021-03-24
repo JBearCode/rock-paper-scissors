@@ -60,7 +60,7 @@ main {
     opacity: .75;
 }
 
-.playButtons button:hover {
+.playButtons button:hover, .resetbutton:hover {
     color: rgba(246,125,0,255);
 }
 
@@ -71,7 +71,7 @@ main {
     margin: .5em;
 }
 
-.resultMessages {
+#resultMessages {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,4 +99,11 @@ footer {
     font-size: 30px;
     font-weight: 700;
     margin: 0px 15px;
+}
+
+.resetbutton {
+    color: rgba(0,142,213,254);
+    font-weight: 800;
+    opacity: .75;
+    padding: 12px 40px;
 }
