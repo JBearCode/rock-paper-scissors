@@ -114,3 +114,18 @@ footer {
     opacity: .75;
     padding: 12px 40px;
 }
+
+@media (max-width : 600px) {
+
+    h1 {
+        font-size: 6.5vw;
+    }
+
+    .gameRules {
+        font-size: 5vw;
+    }
+
+    .mainPara, footer {
+        font-size: 5vw;
+    }
+}
