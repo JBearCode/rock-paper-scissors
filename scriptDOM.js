@@ -5,7 +5,7 @@ let computerScore = 0;
 let resetButton;
 
 const mainPara = document.getElementById("mainPara");
-const gameButtons = document.querySelectorAll("button");
+const gameButton = document.querySelectorAll(".gameButton");
 
 function playRound(buttonName) {
     const playerSelection = buttonName;
@@ -23,17 +23,20 @@ function checkGameOver() {
 }
 
 function endGame() {
-    if (playerScore <= 5) {
-    mainPara.textContent = "Woohoo! You won the game! 🥳"
+    if (playerScore >= 5) {
+        mainPara.textContent = "Woohoo! You won the game! 🥳"
     } else {
-    mainPara.textContent = "Unfortunately, you've been bested by a mindless hunk of metal. 😬 ";
+        mainPara.textContent = "Unfortunately, you've been bested by a mindless hunk of metal. 😬 ";
     }
-
-    gameButtons.disabled = true;
+    
+    gameButton.forEach((button) => {
+        console.log('endGame worked');
+        button.disabled = true;
+        });
+    
     resetButton = document.createElement('button');
     resetButton.textContent = "Battle once more!";
     mainPara.appendChild(resetButton);
-
 }
 
 function updateScore(winner) {
@@ -50,7 +53,6 @@ function updateScore(winner) {
     computerScorePara.textContent = `Computer: ${computerScore}`;
 }
 
-// function to return results of one round
 function findWinner (playerSelection, computerSelection) { 
 
     if (playerSelection === computerSelection) {
@@ -69,7 +71,6 @@ function findWinner (playerSelection, computerSelection) {
     }
 }
 
-// play a random (weighted) choice
 function computerPlay() {
     let weightedChoices = [
         ['rock', 1],
@@ -104,11 +105,4 @@ function computerPlay() {
 function capitalize1stLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-// Button constants
-const rockButton = document.getElementById('rock');
-const paperButton = document.getElementById('paper');
-const scissorsButton = document.getElementById('scissors');
-const fireButton = document.getElementById('fire');
-const waterButton = document.getElementById('water');
 
