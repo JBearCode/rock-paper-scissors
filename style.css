@@ -16,6 +16,10 @@ h1 {
     font-size: 40px;
 }
 
+span.keeptogether {
+    white-space: nowrap ;
+  }
+
 .gameRules {
     color: black;
     font-size: 30px;
@@ -58,6 +62,8 @@ main {
     color: rgba(0,142,213,254);
     font-weight: 800;
     opacity: .75;
+    width: 16%;
+    height: 16%;
 }
 
 .playButtons button:hover, .resetbutton:hover {
@@ -66,9 +72,9 @@ main {
 
 /* Set image size and margin within buttons */
 .playButtons img {
-    width: 12em;
-    height: 12em;
-    margin: .5em;
+    width: 150px;
+    height: auto;
+    max-width: 90%;
 }
 
 #resultMessages {
