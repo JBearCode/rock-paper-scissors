@@ -77,6 +77,9 @@ function findWinner (playerSelection, computerSelection) {
     } else if ((playerSelection === "rock" && computerSelection === "scissors") 
         || (playerSelection === "paper" && computerSelection === "rock")
         || (playerSelection === "scissors" && computerSelection === "paper")
+        || (playerSelection === "rock" && computerSelection === "water")
+        || (playerSelection === "paper" && computerSelection === "water")
+        || (playerSelection === "scissors" && computerSelection === "water")
         || (playerSelection === "water" && computerSelection === "fire" )
         || (playerSelection === "fire" && computerSelection !== "water" )) {
             mainPara.textContent = "You win! " + capitalize1stLetter(playerSelection) + " beats " + computerSelection + "."
