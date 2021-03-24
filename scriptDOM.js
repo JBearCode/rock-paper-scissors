@@ -26,17 +26,31 @@ function endGame() {
     if (playerScore >= 5) {
         mainPara.textContent = "Woohoo! You won the game! 🥳"
     } else {
-        mainPara.textContent = "Unfortunately, you've been bested by a mindless hunk of metal. 😬 ";
+        mainPara.textContent = "You lost to a mindless hunk of metal 😬 ";
     }
     
     gameButton.forEach((button) => {
-        console.log('endGame worked');
         button.disabled = true;
         });
     
     resetButton = document.createElement('button');
     resetButton.textContent = "Battle once more!";
     mainPara.appendChild(resetButton);
+    resetButton.addEventListener('click', resetGame);
+}
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScorePara.textContent = `Player: ${playerScore}` ;
+    computerScorePara.textContent = `Computer: ${computerScore}`;
+
+    gameButton.forEach((button) => {
+        button.disabled = false;
+        });
+    
+    mainPara.textContent = "The elements will battle once more.";
+
 }
 
 function updateScore(winner) {
