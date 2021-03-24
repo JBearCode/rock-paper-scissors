@@ -89,6 +89,7 @@ main {
 #mainPara {
     font-size: 30px;
     font-weight: 700;
+    text-align: center;
 }
 
 /* Center align header and footer text */
