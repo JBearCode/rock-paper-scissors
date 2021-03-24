@@ -94,6 +94,7 @@ main {
     font-size: 30px;
     font-weight: 700;
     text-align: center;
+    max-width: 90%;
 }
 
 header {
@@ -122,11 +123,7 @@ footer {
         font-size: 6.5vw;
     }
 
-    .gameRules {
-        font-size: 5vw;
-    }
-
-    .mainPara, footer {
+    .gameRules, .mainPara, footer {
         font-size: 5vw;
     }
 }
